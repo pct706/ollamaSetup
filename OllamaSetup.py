@@ -23,8 +23,7 @@ def create_tmux_session(session_name='ollama'):
 def install_ollama():
     """Install Ollama using the official install script."""
     try:
-        subprocess.run(['curl', '-fsSL', 'https://ollama.com/install.sh', '|', 'sh'], 
-                       shell=True, check=True)
+        subprocess.run('curl -fsSL https://ollama.com/install.sh | sh', shell=True, check=True)
         print("Ollama installed successfully")
     except subprocess.CalledProcessError as e:
         print(f"Error installing Ollama: {e}")
