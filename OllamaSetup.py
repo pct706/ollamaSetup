@@ -1,7 +1,7 @@
 import os
 import subprocess
 import sys
-
+import time
 def touch_no_auto_tmux():
     """Create a .no_auto_tmux file in the home directory."""
     no_auto_tmux_path = os.path.expanduser('~/.no_auto_tmux')
@@ -62,6 +62,7 @@ def main():
     create_tmux_session()
     install_ollama()
     start_ollama_service()
+    time.sleep(2)
     pull_and_run_models()
     
     print("Ollama setup completed!")
