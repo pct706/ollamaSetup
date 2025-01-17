@@ -72,7 +72,7 @@ def pull_models_parallel():
     ]
     
     # Create a thread pool and pull models in parallel
-    with concurrent.futures.ThreadPoolExecutor(max_workers=len(models_to_pull)) as executor:
+    with concurrent.futures.ThreadPoolExecutor(max_workers=1) as executor:
         # Submit all pull tasks
         futures = [executor.submit(pull_model, model) for model in models_to_pull]
         # Wait for all tasks to complete
